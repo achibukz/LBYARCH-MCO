@@ -8,14 +8,16 @@ asmKernel:
     ; RDX = x2
     ; R8  = y1
     ; R9  = y2
-
-    extern z_asm
-    lea r10, [rel z_asm]    ; r10 = z
+    ; [rsp+8]  = z (5th param)
+    ; [rsp+16] = n (6th param)
+    
+    mov r10, [rsp + 40]       ; 5th argument (z buffer)
+    mov r11d, [rsp + 48]      ; 6th argument (n)
 
     xor eax, eax            ; i = 0
 
 eucl:
-    cmp eax, 4
+    cmp eax, r11d
     jge end
 
     movss xmm0, [rdx + rax * 4]
@@ -37,5 +39,4 @@ eucl:
     jmp eucl
 
 end:
-    mov rax, r10        ; return z
     ret
