@@ -104,13 +104,14 @@ int main() {
     cKernel(x1, x2, y1, y2, z_c);
     asmKernel(x1, x2, y1, y2, z_asm, N);
 
+    printf("\n\n=====       SMALLER TEST CASES       =====\n");
     printf("Index\tC Result\tASM Result\n");
     for (int i = 0; i < N; i++) {
         printf("%d\t%.9f\t%.9f\n", i, z_c[i], z_asm[i]);
     }
 
     printf("\n\n===== TIMING PERFORMANCE TESTS (SPEC i) =====\n");
-    printf("\n\n=====       FOR READ ME PURPOSE         =====\n");
+    printf("\n\n=====       LARGER TEST CASES       =====\n");
     int sizes[] = { 1 << 20, 1 << 24, 1 << 28 };
     for (int s = 0; s < 3; s++) {
         int n = sizes[s];
