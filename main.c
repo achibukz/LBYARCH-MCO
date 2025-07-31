@@ -143,7 +143,7 @@ int main() {
         printf("ASM Kernel Average: %.3f ms\n", avg_asm);
 
         printf("Index\tC Result\tASM Result\n");
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             printf("%d\t%.6f\t%.6f\n", i, tz_c[i], tz_asm[i]);
         }
 
