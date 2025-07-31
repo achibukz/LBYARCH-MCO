@@ -152,3 +152,44 @@ int main() {
 
     return 0;
 }
+
+/*
+int main() {
+    const int n = 1 << 5;  // 2^5 = 32
+    const int runs = 30;
+
+    float* tx1 = (float*)malloc(sizeof(float) * n);
+    float* tx2 = (float*)malloc(sizeof(float) * n);
+    float* ty1 = (float*)malloc(sizeof(float) * n);
+    float* ty2 = (float*)malloc(sizeof(float) * n);
+    float* tz_c = (float*)malloc(sizeof(float) * n);
+    float* tz_asm = (float*)malloc(sizeof(float) * n);
+
+    if (!tx1 || !tx2 || !ty1 || !ty2 || !tz_c || !tz_asm) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    printf("RUN,C (ms),ASM (ms)\n");
+
+    for (int run = 1; run <= runs; run++) {
+        // Fill arrays with new random values
+        for (int i = 0; i < n; i++) {
+            tx1[i] = rand() % 1000 / 10.0f;
+            tx2[i] = rand() % 1000 / 10.0f;
+            ty1[i] = rand() % 1000 / 10.0f;
+            ty2[i] = rand() % 1000 / 10.0f;
+        }
+
+        // Measure time
+        double c_time = time_c_kernel(tx1, tx2, ty1, ty2, tz_c, n);
+        double asm_time = time_asm_kernel(tx1, tx2, ty1, ty2, tz_asm, n);
+
+        // Output result
+        printf("%d,%.6f,%.6f\n", run, c_time, asm_time);
+    }
+
+    free(tx1); free(tx2); free(ty1); free(ty2); free(tz_c); free(tz_asm);
+    return 0;
+}
+*/
