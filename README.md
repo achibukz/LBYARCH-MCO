@@ -1,5 +1,5 @@
 # LBYARCH-MCO
-Bukuhan, Aki (padagdag nalang ng name mo hehe)
+Bukuhan, Abram Aki R.
 Ferrer, Angel June E.
 
 How to Run:
@@ -8,7 +8,7 @@ How to Run:
  2. Run these commands:
         nasm -f win64 kernel.asm -o kernel.o
         gcc main.c kernel.o -o result.exe -lm (any .exe name will do)
-        result.exe 
+        ./result.exe 
 
 ==========      COMPARATIVE EXECUTION TIME      ==========
 _____________________________________________________________
